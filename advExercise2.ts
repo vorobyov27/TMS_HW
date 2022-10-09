@@ -1,3 +1,4 @@
+// Advanced Exercise 2: 5 quistions and write formula + total result.
 const readline = require("readline-sync");
 let firstNum: number = +readline.question("Enter first number");
 let secondNum: number = +readline.question("What number should we minus from previous?");
