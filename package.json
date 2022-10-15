@@ -1,0 +1,27 @@
+{
+  "name": "tms_hw",
+  "version": "1.0.0",
+  "description": "Repository for all homeworks - TMS school.",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^18.8.3",
+    "readline-sync": "^1.4.10",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "advEx1": "npx node advExercise1.js",
+    "advEx2": "npx ts-node advExercise2.ts",
+    "advEx3": "npx ts-node advExercise3.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vorobyov27/TMS_HW.git"
+  },
+  "author": "Alexander Vorobyov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vorobyov27/TMS_HW/issues"
+  },
+  "homepage": "https://github.com/vorobyov27/TMS_HW#readme"
+}
