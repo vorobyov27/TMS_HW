@@ -12,7 +12,9 @@
   "scripts": {
     "advEx1": "npx node advExercise1.js",
     "advEx2": "npx ts-node advExercise2.ts",
-    "advEx3": "npx ts-node advExercise3.ts"
+    "advEx3": "npx ts-node advExercise3.ts",
+    "hw51": "npx ts-node hw5advEx1.ts",
+    "hw52": "npx ts-node hw5advEx2.ts"
   },
   "repository": {
     "type": "git",
