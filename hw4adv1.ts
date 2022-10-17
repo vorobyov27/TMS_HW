@@ -58,68 +58,47 @@ while (!isCorrectMenuItem) {
             break;
         case "3":
             // считываем ввод игрока
-            let userInput: string = readlineHw4.question("Enter any string(5-15 symbols) or any number(form 5 to 15): ");
-            let regexp = /\D/;
+            let userInput = readlineHw4.question("Enter any string(5-15 symbols) or any number(form 5 to 15): ");
+            let numericUserInput = +userInput;
             let tryCount: number;
             let correctGuess: boolean = false;
-            // развилка: является ли ввод игрока строкой(содержит не цифры) или числом
-            if (regexp.exec(userInput) !== null) {
-                // разбиваем строку на массив из символов, вычисляем рандомное число до 15
-                console.log("User input is a string!");
-                const inputArray = userInput.split('');
-                let randomArrInd: number;
-                // вычисляем, ввёл ли игрок строку больше 15 символов, получаем рандомное число в зависимости от ввода
-                if (userInput.length > 15){
-                    randomArrInd = Math.floor(Math.random() * 15);
-                    tryCount = 5;
-                } else { 
-                    randomArrInd = Math.floor(Math.random() * +userInput.length);
-                    tryCount = Math.floor(userInput.length/3);
-                }
-                let targetSymbol = inputArray[randomArrInd];
-
-                // предлагаем игроку угадать символ
-                for (let j:number = 1; j <=tryCount; j++) {
-                    let guessSymb: string = readlineHw4.question(`Try to guess symbol. Attempt #${j} from ${tryCount}: `);
-                    if (guessSymb == targetSymbol){
-                        console.log("Nice! You've won!");
-                        correctGuess = true;
-                        break;
-                    } else if (!correctGuess && j==tryCount) {
-                        console.clear();
-                        console.log("You've lost! Try again later!");
-                        break;
-                    }
-                    else console.log("Incorrect. Try again!: ");
-                }
-            } else {
-                // вычисляем, ввёл ли игрок число больше 15, получаем рандомное число в зависимости от ввода
-                let randomNumber: number;
-                console.log("User input is a number!");
-                if (+userInput > 15){
-                    randomNumber = Math.floor(Math.random() * 15) + 1;
-                    tryCount = 5;
-                } else { 
-                    randomNumber = Math.floor(Math.random() * +userInput) + 1;
-                    tryCount = Math.floor(+userInput/3);
-                }
-                
-                // предлагаем игроку угадать число
-                for (let j:number = 1; j <=tryCount; j++) {
-                    let guessNum: number = +readlineHw4.question(`Try to guess number. Attempt #${j} from ${tryCount}: `);
-                    if (guessNum == randomNumber){
-                        console.log("Nice! You've won!");
-                        correctGuess = true;
-                        break;
-                    } else if (!correctGuess && j==tryCount) {
-                        console.clear();
-                        console.log("You've lost! Try again later!");
-                        break;
-                    }
-                    else console.log("Incorrect. Try again!: ");
-                }
-            }
+            let randomArrInd: number;
+            let messageToAsk: string;
+            let maxArrInd: number = 0;
+            let targetSymbol: string;
             
+            // развилка: является ли ввод игрока строкой
+            if (isNaN(numericUserInput)) {
+                // Если строка: вычисляем максимальный номер символа, вычисляем рандомный символ строки.
+                console.log("User input is a string!");
+                maxArrInd = userInput.length > 15 ? 15 : userInput.length;
+                randomArrInd = Math.floor(Math.random() * maxArrInd);
+                messageToAsk = "Guess the symbol";
+
+                targetSymbol = userInput[randomArrInd];
+            } else {
+                // Если число: вычисляем, ввёл ли игрок число больше 15, получаем рандомное число в зависимости от ввода
+                console.log("User input is a number!");
+                messageToAsk = "Guess the number";
+                maxArrInd = numericUserInput > 15 ? 15 : numericUserInput;
+                targetSymbol = (Math.floor(Math.random() * +maxArrInd) + 1).toString();
+            }
+            tryCount = Math.floor(maxArrInd/3);
+
+            // предлагаем игроку угадать число
+            for (let j:number = 1; j <=tryCount; j++) {
+                let guessChar: string = readlineHw4.question(`${messageToAsk}. Attempt #${j} from ${tryCount}: `);
+                if (guessChar == targetSymbol){
+                    console.log("Nice! You've won!");
+                    correctGuess = true;
+                    break;
+                } else if (!correctGuess && j==tryCount) {
+                    console.clear();
+                    console.log("You've lost! Try again later!");
+                    break;
+                }
+                else console.log("Incorrect. Try again!: ");
+            }
             isCorrectMenuItem = true;
             break;
 
