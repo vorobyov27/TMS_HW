@@ -13,7 +13,9 @@
     "advEx1": "npx node advExercise1.js",
     "advEx2": "npx ts-node advExercise2.ts",
     "advEx3": "npx ts-node advExercise3.ts",
-    "hw4": "npx ts-node hw4adv1.ts"
+    "hw4": "npx ts-node hw4adv1.ts",
+    "hw6": "npx ts-node ./HW6/advEx1.ts"
+
   },
   "repository": {
     "type": "git",
