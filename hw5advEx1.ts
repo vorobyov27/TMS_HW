@@ -6,10 +6,7 @@ const readlineTriangle = require("readline-sync");
 let trSideArray: number[] = [0,0,0];
 
 function canCreateTriangle(a: number, b: number, c: number): boolean {
-    let canCreate: boolean = false;
-        if ((a+b>c)&&(a+c>b)&&(b+c>a)) canCreate = true;
-
-    return canCreate;
+    return (a+b>c)&&(a+c>b)&&(b+c>a);
 }
 
 for (let b = 0; b<3; b++){
