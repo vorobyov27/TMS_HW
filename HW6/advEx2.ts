@@ -31,4 +31,15 @@
         return compareResults;
     }
 
-(!compareObj(student1, student2) || !compareObj(student2, student1))? console.log("Students are different!"): console.log("Students are the same!");
+    function compareObjEqual(obj1: object, obj2: object): boolean {
+        let compareResults = false;
+        const obj1String = JSON.stringify(obj1);
+        const obj2String = JSON.stringify(obj2);
+        if (obj1String === obj2String) {
+            compareResults = true;
+        }
+        return compareResults;
+    }
+    console.log("Students are equal?: "+compareObjEqual(student1, student2));
+
+//(!compareObj(student1, student2) || !compareObj(student2, student1))? console.log("Students are different!"): console.log("Students are the same!");
