@@ -7,25 +7,24 @@
 //     isIsogram("aba") == false
 //     isIsogram("moOse") == false // -- ignore letter case
 // ```
-const inputString: string = "Dermatoglyphics";
+const inputString: string = "moOse";
 
 function isIsagram(str:string): boolean {
     let arr = str.toLowerCase().split("");
 
-    let isagram = true;
-    arr.forEach(function(el:string, i:number, array: string[]){
+    for (let i = 0; i< arr.length; i++) {
         // создаём копию массива и вырезаем текущий символ
         let tempArray = arr.slice(0);
         tempArray.splice(i,1);
 
         // проходим по временному массиву и если вырезанный символ встречается ещё раз - проставлям флаг "изограмма" = false
-        tempArray.forEach(function(tempEl: string, j:number, tempArray: string[]){
-            if (el === tempEl) {
-                isagram = false;
+        for (let j = 0; j<tempArray.length; j++){
+            if (arr[i] === tempArray[j]) {
+                return false
             }
-        })
-    });
-    return isagram;
+        }
+    }
+    return true;
 }
 
 console.log("Is string isagram?: "+isIsagram(inputString));
