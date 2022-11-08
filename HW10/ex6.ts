@@ -6,17 +6,17 @@
 // Описать функцию, которая принимает параметром один из элементов енама и массив (тип [string, number, number][]) и возвращает сумму со скидкой для этого товара
 
 enum Items {
-    "first" = "Огурец",
-    "second" = "Помидор",
-    "third" = "Молоко",
-    "fourth" = "Кефир",
-    "fifth" = "Соль",
-    "sixth" = "Сахар"
+    first = "Огурец",
+    second = "Помидор",
+    third = "Молоко",
+    fourth = "Кефир",
+    fifth = "Соль",
+    sixth = "Сахар"
 }
 
 let itemBase: [string,number,number][] = [['Огурец', 10, 6.4], ['Помидор', 8, 9], ['Молоко', 5.6, 3.3], ['Кефир', 1, 2.4], ['Соль', 0, 1.09], ['Сахар', 50, 5]];
 
-function calcDiscount (enumIt: string, arr: [string,number,number][]): string {
+function calcDiscount (enumIt: Items, arr: [string,number,number][]): string {
     for (let i = 0; i < arr.length; i++) {
         if (enumIt === arr[i][0]) {
             return (arr[i][2]*((100 - arr[i][1])/100)).toFixed(2)
