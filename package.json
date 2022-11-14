@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Repository for all homeworks - TMS school.",
   "main": "index.js",
+  "type": "module",
   "dependencies": {
     "@types/node": "^18.8.3",
+    "node-fetch": "^3.2.10",
     "readline-sync": "^1.4.10",
     "typescript": "^4.8.4"
   },
@@ -16,7 +18,8 @@
     "hw4": "npx ts-node hw4adv1.ts",
     "hw51": "npx ts-node hw5advEx1.ts",
     "hw52": "npx ts-node hw5advEx2.ts",
-    "hw6": "npx ts-node ./HW6/advEx1.ts"
+    "hw6": "npx ts-node ./HW6/advEx1.ts",
+    "test": "npx ts-node ./HW11/ex1.ts"
   },
   "repository": {
     "type": "git",
