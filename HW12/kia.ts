@@ -1,4 +1,5 @@
 import {Car} from "./mainCar.js";
+import {Bills} from "./bills.js";
 
 class Kia extends Car {
     maxFuel: number;
@@ -16,3 +17,4 @@ class Kia extends Car {
 
 const rio = new Kia(45, 6.7, 20, "benz95");
 rio.drive(2000);
+console.log("Total bill is: " + Bills.getBill("fuel"))

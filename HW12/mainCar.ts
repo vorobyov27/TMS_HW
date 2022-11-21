@@ -6,37 +6,36 @@
 // в случае, если расстояние невозможно проехать с текущим запасом топлива, вызывается другой метод - `refuel` (заправиться) столько раз, 
 // сколько необходимо для того, чтобы проехать расстояние
 // Метод `refuel` имеет необязательный параметр количества топлива. Если он не указан, то заправляется полный бак
-// import { FuelCost } from "./bills";
-enum FuelCost {
-    benz92 = 2.36,
-    benz95 = 2.46,
-    benz98 = 2.68,
-    diesel = 2.46
-}
+import { FuelCost, Bills } from "./bills.js";
 
 export abstract class Car {
-    abstract maxFuel: number;
-    abstract fuelPer100: number;
-    abstract fuelReserve: number;
-    abstract fuelType: string;
+    protected abstract maxFuel: number;
+    protected abstract fuelPer100: number;
+    protected abstract fuelReserve: number;
+    protected abstract fuelType: string;
 
     drive(distance: number) {
         const calcFuel = this.fuelReserve - ((distance / 100)*this.fuelPer100);
         if (calcFuel < 0){
-            const fuelIndex = Math.abs(Math.floor(calcFuel / this.maxFuel));
-            for (let i = 0; i< fuelIndex; i++) {
+            const fuelIndexFullTank = Math.abs(Math.ceil(calcFuel / this.maxFuel));
+            const fuelIndexPartial = Math.abs(calcFuel / this.maxFuel) - fuelIndexFullTank;
+            for (let i = 0; i< fuelIndexFullTank; i++) {
                 this.refuel()     
             }
-            console.log(`Drive with refuel count = ${fuelIndex}, distance = ${distance}`)
+            if (fuelIndexPartial !== 0) {
+                this.refuel(Math.ceil(fuelIndexPartial*this.maxFuel))
+            }
         } else console.log(`Drive without refuel, ${distance} km...`)
     }
 
     refuel(fuelAmount?: number){
         if ((fuelAmount !== null) && (fuelAmount <= this.maxFuel)) {
             this.fuelReserve = fuelAmount;
+            Bills.addBill('fuel', FuelCost[this.fuelType]*fuelAmount)
             console.log(`Add ${fuelAmount} liters. Fuel bill = ${FuelCost[this.fuelType]*fuelAmount}`)
         } else if ((fuelAmount == null) || (fuelAmount > this.maxFuel)) {
             this.fuelReserve = this.maxFuel;
+            Bills.addBill('fuel', FuelCost[this.fuelType]*this.maxFuel)
             console.log(`Added maximum fuel! Fuel bill = ${FuelCost[this.fuelType]*this.maxFuel}`);
         }
     }

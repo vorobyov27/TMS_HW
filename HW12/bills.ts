@@ -14,17 +14,18 @@ enum FuelCost {
     benz98 = 2.68,
     diesel = 2.46
 }
-
 class Bills {
-    private static billSum: number;
+    private static billSum: Map <string, number> = new Map <string, number> ([
+        ['fuel', 0]
+    ]);
 
     public static getBill(billType: string): number {
-        console.log("Not implemented")
-        return 0
+        return Bills.billSum.get(billType);
     }
 
     public static addBill(billType: string, billAmount: number): void {
-        console.log("Not implemented")
+        const currentBill = Bills.getBill(billType);
+        Bills.billSum.set(billType, currentBill + billAmount)
     }
 }
 
