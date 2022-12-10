@@ -1,0 +1,5 @@
+"id","title","test case id","author","assignee","actual result","status","milestone","severity","external issues","attachments","tags"
+"2","Valid search request returns ""Nothing is found"" error.","14","Aliaksandr","Unassigned","Actual result: Valid search request returns error ""Nothing is found""
+Expected retuls: Valid search request returns correct book item in search results.","Open","","Major","","",""
+"1","Discount amount has added to order total price.","13","Aliaksandr","Unassigned","Results: Discount amount is added to total price.
+Expected: Discount amount is substracted from total price.","Open","","Critical","","",""
