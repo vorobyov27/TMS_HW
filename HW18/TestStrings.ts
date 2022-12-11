@@ -1,5 +1,3 @@
-import { assert } from "console";
-
 class TestStrings {
 
     symbolCount(mainStr: string, ind: number): string {
