@@ -34,7 +34,7 @@ class TestStrings {
     }
 
     deleteExclude (mainStr: string, subStr: string, ind: number): string {
-        if (mainStr.length < 1 || subStr.length < 1) {
+        if (mainStr.length < 1 || subStr.length < 1 || subStr.length < ind) {
             return "Incorrect income string"
         } else if (ind < 0 || ind > mainStr.length) { 
             return "Incorrect index!"   
@@ -62,11 +62,21 @@ class TestStrings {
     }
 
     replaceSymbols (incomeStr: string, firstArr: number[], secondArr: number[]): string {
-        if (firstArr.length < 1 || secondArr.length < 1) {
+        if (firstArr.length < 1 || secondArr.length < 1 || firstArr.length !== secondArr.length) {
             return "Enter valid arrays!"
         } else if (incomeStr.length<1) {
             return "Income string is empty!"
         } else {
+            let invalidArrayEl: boolean = false;
+            const totalArr = firstArr.concat(secondArr);
+            totalArr.forEach(el => {
+                if (el > (incomeStr.length -1 )) {
+                    invalidArrayEl = true;
+                }
+            });
+            if (invalidArrayEl) {
+                return "Incorrect array element: out of string!"
+            }
             let totalStr = incomeStr;
             for (let i = 0; i < firstArr.length; i++) {
                 totalStr = totalStr.slice(0, firstArr[i]) + totalStr[secondArr[i]] + totalStr.slice(firstArr[i]+1)
