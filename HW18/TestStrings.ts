@@ -20,14 +20,10 @@ class TestStrings {
             return "Incorrect income string"
         } else {
             let totalArray = [];
-            let position = 0;
-            while(true) {
-                let targetPosition = mainStr.indexOf(subStr, position);
-                if (targetPosition === -1) {
-                    break
-                }
-                totalArray.push(targetPosition);
-                position = targetPosition + 1;
+            let position = mainStr.indexOf(subStr);
+            while(position !== -1) {
+                totalArray.push(position);
+                position = mainStr.indexOf(subStr, position + 1);
             }
             return totalArray;
         }
@@ -41,21 +37,16 @@ class TestStrings {
         } else {
             let finalString: string = "";
             let startPos: number = 0;
-            let targetPos: number = 0;
+            let targetPos: number = mainStr.indexOf(subStr, startPos);
             let counter: number = 0;
-            while (true) {
-                targetPos = mainStr.indexOf(subStr, startPos);
-                if (targetPos > -1) {
+            while (targetPos > -1) {
                     finalString += mainStr.slice(startPos, targetPos);
                     if (counter === ind) {
                         finalString += subStr
                     }
                     startPos = targetPos + subStr.length;
                     counter++;
-                } else {
-                    finalString += mainStr.slice(startPos, mainStr.length);
-                    break;
-                }
+                    targetPos = mainStr.indexOf(subStr, startPos);
             }
             return finalString;
         }
@@ -69,12 +60,7 @@ class TestStrings {
         } else {
             let invalidArrayEl: boolean = false;
             const totalArr = firstArr.concat(secondArr);
-            totalArr.forEach(el => {
-                if (el > (incomeStr.length -1 )) {
-                    invalidArrayEl = true;
-                }
-            });
-            if (invalidArrayEl) {
+            if (!totalArr.every(el => (el <= (incomeStr.length -1 )))) {
                 return "Incorrect array element: out of string!"
             }
             let totalStr = incomeStr;
