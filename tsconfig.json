@@ -2,6 +2,9 @@
   "compilerOptions": {
     "module": "ES2020",
     "moduleResolution": "node",
+    "types":["node", "chromedriver", "selenium-webdriver"],
+    "esModuleInterop": true,
+    "target": "ES6"
   },
   "ts-node": {"esm": true}
 }
