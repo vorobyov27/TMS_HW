@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style></style>
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        <title>Основные тэги HTML. Парные</title>
+    </head>
+    <body>
+        <div class="pageContent">
+            <div class="tableHeader">Основные тэги HTML. Парные</div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%">Tag</th>
+                    <th>Description</th>
+                    <th>Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&lthtml&gt</td>
+                    <td>Основной тэг, в котором <br>
+                        содержится весь HTML</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&lthead&gt</td>
+                    <td>Тэг заголовка, обычно не содержит
+                        информации, которая отображается
+                        на странице</td>
+                    <td>Включает ссылки на css, js файлы, title и тп
+                    </td>
+                </tr>
+                <tr>
+                    <td>&ltbody&gt</td>
+                    <td>Основное видимое тело документа</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&ltstyle&gt</td>
+                    <td>Содержит CSS стили</td>
+                    <td>Используется в &lthead&gt</td>
+                </tr>
+                <tr>
+                    <td>&ltscript&gt</td>
+                    <td>Содержит JS код</td>
+                    <td>
+                        <ul>
+                            <li>
+                                Используется в &lthead&gt.
+                            </li>
+                            <li>
+                                Атрибут scr может использоваться для стороннего JS файла.
+                            </li>
+                        </ul>  
+                    </td>
+                </tr>
+                <tr>
+                    <td>&ltdiv&gt</td>
+                    <td>Просто отдельный блок</td>
+                    <td>Как и &ltp&gt располагается на новой строке
+                    </td>
+                </tr>
+                <tr>
+                    <td>&ltp&gt</td>
+                    <td>Блок абзаца</td>
+                    <td>Имеет стандартные отступы, в отличие от &ltdiv&gt</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>&ltiframe&gt</li>
+                            <li>&ltframe&gt</li>
+                        </ul>
+                    </td>
+                    <td>Фрейм, можно назвать отдельным HTML файлом</td>
+                    <td>Код в элементе выполняется независимо <br>
+                        от основного</td>
+                </tr>
+                <tr>
+                    <td>&lttable&gt</td>
+                    <td>Таблица</td>
+                    <td>
+                        <ul>
+                            <li>Все внутренние теги парные.</li>
+                            <li>Заголовки таблицы находятся в тэге &ltthead&gt, тело таблицы – в &lttbody&gt.</li>
+                            <li>Каждая строка - внутри &lttr&gt (строка заголовков в том числе) – находятся в thead или tbody.</li>
+                            <li>В &lttr&gt: ячейка заголовка - &ltth&gt. Ячейка таблицы - &lttd&gt</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&ltul&gt&ltli&gt&lt/li&gt&lt/ul&gt</td>
+                    <td>Список</td>
+                    <td>
+                        <ul>
+                            <li>
+                                Список может быть внутри списка.
+                            </li>
+                            <li>
+                                ul - список, каждый пункт списка - li 
+                            </li>
+                        </ul>                     
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>
+                                &lth1&gt&lth2&gt&lth3&gt
+                            </li>
+                            <li>
+                                &lth4&gt&lth5&gt&lth6&gt
+                            </li>
+                        </ul>
+                    </td>
+                    <td>Залоловки</td>
+                    <td>Заголовок h1 может быть только 1 на странице</td>
+                </tr>
+                <tr>
+                    <td>&lttitle&gt</td>
+                    <td>Название страницы</td>
+                    <td>
+                        <ul>
+                            <li>
+                                Используется в &lthead&gt.
+                            </li>
+                            <li>
+                                Отображает название страницы на вкладке браузера
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&ltbutton&gt</td>
+                    <td>Кнопка</td>
+                    <td>
+                        <ul>
+                            <li>
+                                Альтернатива &ltinput type=“button”&gt, &ltinput type=“submit”&gt.
+                            </li>
+                            <li>
+                                Текст между тегами будет названием кнопки.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&ltselect&gt</td>
+                    <td>Комбобокс</td>
+                    <td>
+                        <ul>
+                            <li>
+                                Каждый элемент комбобокса располагается внутри тэга &ltselect> и имеет тэг &ltoption&gtНазвание опции&lt/option&gt.
+                            </li>
+                            <li>
+                                Атрибут selected - выбранный элемент по-умолчанию.
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </body>    
+</html>
