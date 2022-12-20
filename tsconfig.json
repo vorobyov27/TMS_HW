@@ -2,6 +2,8 @@
   "compilerOptions": {
     "module": "ES2020",
     "moduleResolution": "node",
+    "types":["node", "jest", "superagent"],
+    "esModuleInterop": true
   },
   "ts-node": {"esm": true}
 }
