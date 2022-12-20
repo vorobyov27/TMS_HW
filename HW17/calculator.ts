@@ -7,28 +7,43 @@ class Calculator {
         this.operation = operation;
     }
 
-    add(a: number, b:number): number {
+    add(a: number, b:number): number | string {
+        if (isNaN(a)||isNaN(b)) {
+            return `Incorrect inputs. Inputs should be number.`;
+        }
         return a+b;
-    }
+    } 
 
-    substract(a: number, b:number): number {
+    substract(a: number, b:number): number | string {
+        if (isNaN(a)||isNaN(b)) {
+            return `Incorrect inputs. Inputs should be number.`;
+        }
         return a-b;
     }
 
-    multiply(a: number, b:number): number {
+    multiply(a: number, b:number): number | string {
+        if (isNaN(a)||isNaN(b)) {
+            return `Incorrect inputs. Inputs should be number.`;
+        }
         return a*b;
     }
 
-    divide(a: number, b:number): number {
+    divide(a: number, b:number): number | string {
+        if (isNaN(a)||isNaN(b) || b === 0) {
+            return `Incorrect inputs. Inputs should be number. arg2 cannot be 0`;
+        }
         return a/b;
     }
 
-    power(a: number, b:number): number {
+    power(a: number, b:number): number | string {
+        if (isNaN(a)||isNaN(b)) {
+            return `Incorrect inputs. Inputs should be number.`;
+        }
         return a ** b;
     }
 
-    start(): number {
-        let result: number = 0;
+    start(): number | string {
+        let result;
         switch(this.operation) { 
             case 'add': { 
                 result = this.add(this.dataArr[0], this.dataArr[1]);

@@ -3,7 +3,8 @@
     "module": "ES2020",
     "moduleResolution": "node",
     "types":["node", "jest", "superagent"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "target": "ES6"
   },
-  "ts-node": {"esm": true}
+  "ts-node": {"esm": false}
 }
