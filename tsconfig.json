@@ -6,5 +6,5 @@
     "esModuleInterop": true,
     "target": "ES6"
   },
-  "ts-node": {"esm": false}
+  "ts-node": {"esm": true}
 }
