@@ -59,9 +59,9 @@ async function tablesTest() {
     driver.manage().window().maximize();
     driver.get('https://the-internet.herokuapp.com/tables');
     while(!driver.executeScript('document.readyState === "complete"'));
-    console.log(await driver.findElement(By.xpath('//table[@id="table1"]//tr[2]/td[4]')).getText())
-    console.log(await driver.findElement(By.xpath('//table[@id="table1"]//tr[4]/td[6]/a[2]')).getAttribute('href'))
-    console.log(await driver.findElement(By.xpath('//table[@id="table2"]//tr[4]/td[5]')).getAttribute('class'))
+    console.log(await driver.findElement(By.xpath('//table[@id="table2"]//td[@class="dues"]')).getText())
+    console.log(await driver.findElement(By.xpath('//table[@id="table1"]//a[contains(text(),"delete")]')).getAttribute('href'))
+    console.log(await driver.findElement(By.xpath('//table[@id="table2"]//td[@class="web-site"]')).getAttribute('class'))
     driver.quit();
 }
 
