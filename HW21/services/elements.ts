@@ -23,8 +23,4 @@ export class elements {
     public static getElementsByXpath(selector: string){
         return this.driver.findElements(By.xpath(selector))
     }
-
-    public static waitForPageLoad(){
-        while(!this.driver.executeScript('document.readyState === "complete"'));
-    }
 }

@@ -14,4 +14,8 @@ export class BrowserHelper {
     public static goTo(url: string) {
         return this.driver.get(url)
     }
+
+    public static waitForPageLoad(){
+        while(!this.driver.executeScript('document.readyState === "complete"'));
+    }
 }

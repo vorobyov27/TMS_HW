@@ -19,7 +19,7 @@ describe('HW21 test suite', () => {
     test('Check header links.', async () => {
         const expectedTabs: string[] = ['https://catalog.onliner.by/','https://www.onliner.by/','https://ab.onliner.by/','https://r.onliner.by/pk','https://s.onliner.by/tasks','https://baraholka.onliner.by/','https://forum.onliner.by/']
         BrowserHelper.goTo('https://www.onliner.by');
-        elements.waitForPageLoad();
+        BrowserHelper.waitForPageLoad();
         const headerTab = await elements.getElementByXpath(mainPage.headerTab)
         elements.waitForDisplayed(headerTab);
         const headerTabsArray = await elements.getElementsByXpath(mainPage.headerTab)
@@ -31,7 +31,7 @@ describe('HW21 test suite', () => {
     test('Check header tab text.', async () => {
         const expectedTabs: string[] = ['Каталог','Новости','Автобарахолка','Дома и квартиры','Услуги','Барахолка','Форум']
         DriverManager.driver.get('https://www.onliner.by');
-        elements.waitForPageLoad();
+        BrowserHelper.waitForPageLoad();
         const headerTabsArray = await elements.getElementsByXpath(mainPage.headerTab)
 
         let flag = await checks.compareElementArrayText(headerTabsArray, expectedTabs);
@@ -43,7 +43,7 @@ describe('HW21 test suite', () => {
         const expectedTitle: string = "Каталог";
 
         DriverManager.driver.get('https://catalog.onliner.by/');
-        elements.waitForPageLoad();
+        BrowserHelper.waitForPageLoad();
         const catalogPageTitle: WebElement = await elements.getElementByXpath(catalogPage.pageTitle);
         const catalogNavItems: WebElement[] = await elements.getElementsByXpath(catalogPage.catalogNavItem);
         expect(await catalogPageTitle.getText()).toContain(expectedTitle);
@@ -55,7 +55,7 @@ describe('HW21 test suite', () => {
     test('Check catalog bar - bar tabs.', async () => {
         const expectedArr: string[] = ['Новогодние елки','Санки','Автомобильные аккумуляторы','Щетки стеклоочистителей','Увлажнители воздуха','Автомобильные шины','Кофе', 'Электрочайники и термопоты', 'Моторные масла'];
         DriverManager.driver.get('https://catalog.onliner.by/');
-        elements.waitForPageLoad();
+        BrowserHelper.waitForPageLoad();
         const catalogBarItems: WebElement[] = await elements.getElementsByXpath(catalogPage.catalogBarItem);
 
         let flag = await checks.compareElementArrayText(catalogBarItems, expectedArr);
@@ -65,7 +65,7 @@ describe('HW21 test suite', () => {
     test('Check footer link texts.', async () => {
         const expectedArr: string[] = ['О компании','Контакты редакции','Реклама','Тарифы','Вакансии','Манифест','Пользовательское соглашение', 'Публичные договоры', 'Политика конфиденциальности', 'Поддержка пользователей', 'Правила возврата'];
         DriverManager.driver.get('https://catalog.onliner.by/');
-        elements.waitForPageLoad();
+        BrowserHelper.waitForPageLoad();
         const footerLinks: WebElement[] = await elements.getElementsByXpath(catalogPage.footerLink);
 
         let flag = await checks.compareElementArrayText(footerLinks, expectedArr);
