@@ -31,8 +31,8 @@ describe('Testing Drive2ru', () => {
   })
 
   it('Open Login - xpath selectors.', () => {
-    cy.xpath('//*[data-testid="topbar.login"]')
-    cy.get('[data-slot="signup-email-form.button"]').should('be.visible')
-    cy.url().should('contain','/signup')
+    cy.xpath('//*[@data-testid="topbar.login"]')
+    cy.xpath('//*[@id="login"]').should('be.visible')
+    cy.url().should('contain','/reception')
   })
 })
