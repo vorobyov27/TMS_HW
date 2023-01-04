@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "ES2020",
     "moduleResolution": "node",
-    "types":["node", "jest", "superagent"],
+    "types":["node", "chromedriver", "selenium-webdriver", "jest", "superagent"],
     "esModuleInterop": true,
     "target": "ES6"
   },

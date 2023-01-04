@@ -35,7 +35,7 @@
     "hw51": "npx ts-node hw5advEx1.ts",
     "hw52": "npx ts-node hw5advEx2.ts",
     "hw6": "npx ts-node ./HW6/advEx1.ts",
-    "test": "npx ts-node ./HW17/test.ts"
+    "test": "npx ts-node ./HW20/steamTest.ts"
   },
   "repository": {
     "type": "git",
