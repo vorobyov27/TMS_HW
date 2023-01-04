@@ -5,6 +5,11 @@
   "main": "index.js",
   "type": "module",
   "dependencies": {
+    "@types/chromedriver": "^81.0.1",
+    "@types/node": "^18.11.17",
+    "@types/selenium-webdriver": "^4.1.9",
+    "chromedriver": "^108.0.0",
+    "selenium-webdriver": "^4.7.1",
     "@types/jest": "^29.2.4",
     "@types/superagent": "^4.1.16",
     "jest": "^29.3.1",
@@ -31,7 +36,7 @@
     "hw51": "npx ts-node hw5advEx1.ts",
     "hw52": "npx ts-node hw5advEx2.ts",
     "hw6": "npx ts-node ./HW6/advEx1.ts",
-    "test": "npx ts-node ./HW17/test.ts"
+    "test": "npx ts-node ./HW20/steamTest.ts"
   },
   "repository": {
     "type": "git",
