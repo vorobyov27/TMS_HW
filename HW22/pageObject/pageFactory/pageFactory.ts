@@ -21,7 +21,6 @@ export class PageFactory {
                 return new SearchPopup();    
             default:
                 throw new Error(`Page factory is not implemented for ${pageName} `)
-                break;
         }
     }
 }

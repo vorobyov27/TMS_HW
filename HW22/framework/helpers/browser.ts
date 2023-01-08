@@ -1,6 +1,6 @@
 import { DriverManager } from './driverManager';
 
-export class browser {
+export class Browser {
     private static driver = DriverManager.driver;
 
     public static close() {

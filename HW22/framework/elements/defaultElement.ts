@@ -12,6 +12,7 @@ export abstract class DefaultElement {
     }
 
     public click() {
+        this.driver.wait(until.elementIsVisible(this.element))
         return this.element.click();
     }
 
