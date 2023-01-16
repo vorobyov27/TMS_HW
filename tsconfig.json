@@ -1,10 +1,12 @@
 {
-  "compilerOptions": {
-    "module": "ES2020",
-    "moduleResolution": "node",
-    "types":["node", "chromedriver", "selenium-webdriver", "jest", "superagent"],
-    "esModuleInterop": true,
-    "target": "ES6"
-  },
-  "ts-node": {"esm": true}
+    "compilerOptions": {
+        "module": "CommonJS",
+        "types": [
+            "node",
+            "@wdio/globals/types",
+            "expect-webdriverio",
+            "@wdio/cucumber-framework"
+        ],
+        "target": "es2022"
+    }
 }
