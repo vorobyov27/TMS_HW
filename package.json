@@ -5,15 +5,19 @@
   "main": "index.js",
   "type": "commonjs",
   "dependencies": {
+    "@types/chromedriver": "^81.0.1",
     "@types/jest": "^29.2.4",
     "@types/mocha": "^10.0.1",
-    "@types/node": "^18.11.13",
+    "@types/node": "^18.11.18",
+    "@types/selenium-webdriver": "^4.1.9",
     "@types/superagent": "^4.1.16",
+    "chromedriver": "^108.0.0",
     "fs": "0.0.1-security",
     "jest": "^29.3.1",
     "mocha": "^10.2.0",
     "node-fetch": "^3.2.10",
     "readline-sync": "^1.4.10",
+    "selenium-webdriver": "^4.7.1",
     "superagent": "^8.0.6",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
@@ -32,8 +36,8 @@
     "hw51": "npx ts-node hw5advEx1.ts",
     "hw52": "npx ts-node hw5advEx2.ts",
     "hw6": "npx ts-node ./HW6/advEx1.ts",
-    "test": "npx ts-node ./HW17/test.ts",
-    "head": "npx playwright test --headed"
+    "head": "npx playwright test --headed",
+    "test": "npx ts-node ./HW20/steamTest.ts"
   },
   "repository": {
     "type": "git",
