@@ -1,32 +1,40 @@
-import { Page } from "@playwright/test";
+import { Locator } from "playwright-core";
+import { TestPage } from "../helpers/pageSingleton";
 
 export abstract class DefaultElement {
-    readonly page: Page;
-    selector: string;
+    protected readonly page = TestPage.getInstance();
 
-    constructor(page: Page, selector: string){
-        this.page = page;
-        this.selector = selector;
+    public constructor(private readonly locator: string) {
     }
 
+    protected getElement(): Locator {
+        return this.page.locator(this.locator);
+    }
 
-    // protected get element() {
-    //     return this.driver.findElement(this.selector);
-    // }
+    public getText() {
+        return this.getElement().textContent();
+    }
 
-    // public click() {
-    //     return this.element.click();
-    // }
+    protected waitForExists() {
+        return this.getElement().waitFor({state: 'attached'});
+    }
 
-    // public getAttribute(attributeName: string) {
-    //     return this.element.getAttribute(attributeName);
-    // }
+    public get isDisplayed() {
+        return this.getElement().isVisible();
+    }
 
-    // public waitForDisplayed() {
-    //     return this.driver.wait(until.elementIsVisible(this.element));
-    // }
+    protected async waitForVisible() {
+        await this.waitForExists();
+        await this.getElement().waitFor({state: 'visible'});
+        return this.getElement();
+    }
 
-    // public getText() {
-    //     return this.element.getText();
-    // }
+    public async click() {
+        const element = await this.waitForVisible();
+        return element.click();
+    }
+
+    public async waitForExist() {
+        await this.getElement().waitFor({state: 'attached'});
+    }
 }

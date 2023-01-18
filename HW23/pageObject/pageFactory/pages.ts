@@ -1,4 +1,7 @@
-export enum Pages {
-    mainPage,
-    jobs,
+export enum Page {
+    Main,
+    Jobs,
+    NewsItem,
+    Companies,
+    Auth,
 }

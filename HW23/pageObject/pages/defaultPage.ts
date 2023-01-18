@@ -1,21 +1,10 @@
-import { Page } from '@playwright/test';
+import { BaseForm } from '../../framework/helpers/baseForm';
+import { Elements } from '../../framework/elements/manager/elements'
+import { ElementsManager } from "../../framework/elements/manager/elementManager";
 
-export class DefaultPage {
-  readonly page: Page;
+export abstract class DefaultPage extends BaseForm {
 
-  constructor(page: Page) {
-    this.page = page;
+  constructor(pageLocator: string) {
+    super(pageLocator);
   }
-
-  async goto(url: string) {
-    await this.page.goto(url);
-  }
-  
-  // async click(element: Locator) {
-  //   await element.click();
-  // }
-
-  // async locator(selector: string): Promise<Locator> {
-  //   return this.page.locator(selector)
-  // }
 }

@@ -1,26 +1,30 @@
-import { Page } from '@playwright/test';
-import { Pages } from './pages';
+import { Page as PageType } from './pages';
 import { MainPage } from '../pages/mainPage';
 import { JobsPage } from '../pages/jobsPage';
+import { NewsItemPage } from '../pages/newsItemPage'
+import { CompaniesPage } from '../pages/companiesPage';
+import { AuthPage } from '../pages/authPage';
 
 export class PageFactory {
-    static page: Page;
-
-    constructor(page: Page) {
-        PageFactory.page = page;
-    }
-
-    public static getPage(pageName: Pages.mainPage): MainPage;
-    public static getPage(pageName: Pages.jobs): JobsPage;
-    public static getPage(pageName: Pages) {
-        switch (pageName) {
-            case Pages.mainPage:
-                return new MainPage(this.page);
-            case Pages.jobs: 
-                return new JobsPage(this.page); 
+    public static getPage(pageType: PageType.Main): Promise<MainPage>;
+    public static getPage(pageType: PageType.Jobs): Promise<JobsPage>;
+    public static getPage(pageType: PageType.NewsItem): Promise<NewsItemPage>;
+    public static getPage(pageType: PageType.Companies): Promise<CompaniesPage>;
+    public static getPage(pageType: PageType.Auth): Promise<AuthPage>;
+    public static getPage(pageType: PageType) {
+        switch (pageType) {
+            case PageType.Main:
+                return new MainPage().waitForLoad();
+            case PageType.Jobs: 
+                return new JobsPage().waitForLoad(); 
+            case PageType.NewsItem:
+                return new NewsItemPage().waitForLoad();    
+            case PageType.Companies:
+                return new CompaniesPage().waitForLoad();
+            case PageType.Auth:
+                return new AuthPage().waitForLoad()   
             default:
-                throw new Error(`Page factory is not implemented for ${pageName} `)
-                break;
+                throw new Error(`Page factory is not implemented for ${pageType} `)
         }
     }
 }
