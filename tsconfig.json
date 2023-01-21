@@ -2,9 +2,9 @@
   "compilerOptions": {
     "module": "ES2020",
     "moduleResolution": "node",
-    "types":["node", "jest", "superagent", "playwright-core", "playwright"],
+    "types":["node", "chromedriver", "selenium-webdriver", "jest", "superagent", "playwright-core", "playwright"],
     "esModuleInterop": true,
     "target": "ES6"
   },
-  "ts-node": {"esm": false}
+  "ts-node": {"esm": true}
 }
