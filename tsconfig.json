@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
+    "module": "NodeNext",
     "moduleResolution": "node",
     "types":["node", "cypress", "cypress-xpath"],
     "esModuleInterop": true,
@@ -10,5 +10,5 @@
     "strict": true, 
     "skipLibCheck": true
   },
-  "ts-node": {"esm": true}
+  "ts-node": {"esm": false}
 }
