@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
+    "module": "CommonJS",
     "moduleResolution": "node",
-    "types":["node", "cypress", "chromedriver", "selenium-webdriver", "jest", "superagent", "playwright-core", "playwright"],
+    "types":["node", "cypress", "chromedriver", "selenium-webdriver", "jest", "superagent", "playwright-core", "playwright", "@wdio/globals/types", "expect-webdriverio, "@wdio/cucumber-framework" ],
     "esModuleInterop": true,
     "target": "es2016",
     "lib": ["DOM", "ES2016"],
