@@ -24,6 +24,7 @@
     "typescript": "^4.8.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.29.2",
     "@types/chai": "^4.3.4",
     "chai": "^4.3.7"
   },
@@ -35,6 +36,7 @@
     "hw51": "npx ts-node hw5advEx1.ts",
     "hw52": "npx ts-node hw5advEx2.ts",
     "hw6": "npx ts-node ./HW6/advEx1.ts",
+    "head": "npx playwright test --headed",
     "test": "npx ts-node ./HW20/steamTest.ts"
   },
   "repository": {
