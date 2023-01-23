@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "NodeNext",
     "moduleResolution": "node",
-    "types":["node", "cypress", "cypress-xpath"],
+    "types":["node", "cypress", "chromedriver", "selenium-webdriver", "jest", "superagent", "playwright-core", "playwright"],
     "esModuleInterop": true,
     "target": "es2016",
     "lib": ["DOM", "ES2016"],
