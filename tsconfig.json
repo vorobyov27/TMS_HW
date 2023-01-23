@@ -1,12 +1,14 @@
 {
-    "compilerOptions": {
-        "module": "CommonJS",
-        "types": [
-            "node",
-            "@wdio/globals/types",
-            "expect-webdriverio",
-            "@wdio/cucumber-framework"
-        ],
-        "target": "es2022"
-    }
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "types":["node", "cypress", "chromedriver", "selenium-webdriver", "jest", "superagent", "playwright-core", "playwright", "@wdio/globals/types", "expect-webdriverio, "@wdio/cucumber-framework" ],
+    "esModuleInterop": true,
+    "target": "es2016",
+    "lib": ["DOM", "ES2016"],
+    "forceConsistentCasingInFileNames": true, 
+    "strict": true, 
+    "skipLibCheck": true
+  },
+  "ts-node": {"esm": false}
 }
