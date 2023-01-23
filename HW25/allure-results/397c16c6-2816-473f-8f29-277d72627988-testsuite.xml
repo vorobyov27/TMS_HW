@@ -1,0 +1,145 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1674507249836' stop='1674507253807'>
+    <name>Check Kinopoisk main page</name>
+    <title>Check Kinopoisk main page</title>
+    <test-cases>
+        <test-case start='1674507249892' status='passed' stop='1674507251953'>
+            <name>As a user, I can open header menu</name>
+            <title>As a user, I can open header menu</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+                <label name='feature' value='Check Kinopoisk main page'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-109.0.5414.75'/>
+            </parameters>
+            <steps>
+                <step start='1674507249896' status='passed' stop='1674507251940'>
+                    <name>Given I am on the Main page</name>
+                    <title>Given I am on the Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507251940' status='passed' stop='1674507251946'>
+                    <name>When I click headerMenu on Main page</name>
+                    <title>When I click headerMenu on Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507251946' status='passed' stop='1674507251949'>
+                    <name>Then Element menuOpened appears on Main page</name>
+                    <title>Then Element menuOpened appears on Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507251950' status='passed' stop='1674507251952'>
+                    <name>And Element menuHomeOption appears on Main page</name>
+                    <title>And Element menuHomeOption appears on Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1674507251953' status='passed' stop='1674507253108'>
+            <name>As a user, I can close opened menu</name>
+            <title>As a user, I can close opened menu</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+                <label name='feature' value='Check Kinopoisk main page'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-109.0.5414.75'/>
+            </parameters>
+            <steps>
+                <step start='1674507251954' status='passed' stop='1674507253094'>
+                    <name>Given I am on the Main page</name>
+                    <title>Given I am on the Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507253095' status='passed' stop='1674507253098'>
+                    <name>When I click headerMenu on Main page</name>
+                    <title>When I click headerMenu on Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507253098' status='passed' stop='1674507253101'>
+                    <name>Then Element menuOpened appears on Main page</name>
+                    <title>Then Element menuOpened appears on Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507253101' status='passed' stop='1674507253103'>
+                    <name>When I click headerMenu on Main page</name>
+                    <title>When I click headerMenu on Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507253104' status='passed' stop='1674507253107'>
+                    <name>Then Element menuOpened is not displayed on Main page</name>
+                    <title>Then Element menuOpened is not displayed on Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1674507253108' status='passed' stop='1674507253806'>
+            <name>As a user, I can open Tickets page via Menu</name>
+            <title>As a user, I can open Tickets page via Menu</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+                <label name='feature' value='Check Kinopoisk main page'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-109.0.5414.75'/>
+            </parameters>
+            <steps>
+                <step start='1674507253108' status='passed' stop='1674507253796'>
+                    <name>Given I am on the Main page</name>
+                    <title>Given I am on the Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507253796' status='passed' stop='1674507253798'>
+                    <name>When I click headerMenu on Main page</name>
+                    <title>When I click headerMenu on Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507253798' status='passed' stop='1674507253800'>
+                    <name>Then Element menuOpened appears on Main page</name>
+                    <title>Then Element menuOpened appears on Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507253800' status='passed' stop='1674507253802'>
+                    <name>And Element menuAfishaOption appears on Main page</name>
+                    <title>And Element menuAfishaOption appears on Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507253802' status='passed' stop='1674507253804'>
+                    <name>When I click menuAfishaOption on Main page</name>
+                    <title>When I click menuAfishaOption on Main page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1674507253804' status='passed' stop='1674507253806'>
+                    <name>Then Element promoTitle appears on Films page</name>
+                    <title>Then Element promoTitle appears on Films page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
