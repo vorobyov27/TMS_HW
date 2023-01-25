@@ -1,0 +1,25 @@
+Task1
+SELECT * FROM Customers WHERE City = 'London';
+SELECT CustomerName, ContactName FROM Customers WHERE Address like '%23';
+SELECT Distinct City FROM Customers;
+SELECT * FROM Customers WHERE PostalCode like '0%';
+SELECT * FROM Customers WHERE Country != 'USA';
+SELECT * FROM Customers WHERE Country = 'France' ORDER BY CustomerName;
+SELECT * FROM Customers WHERE Country = 'Germany' OR Country = 'USA' Limit 10;
+
+Task2
+SELECT * FROM Products WHERE ProductName like 'M%';
+SELECT Unit FROM Products WHERE ProductName = 'Steeleye Stout';
+SELECT ProductName FROM Products WHERE Price > '22';
+SELECT * FROM Products WHERE Unit = '500 g';
+SELECT * FROM Products WHERE Unit like '%bottles';
+SELECT * FROM Products WHERE SupplierID = '7' ORDER BY Price DESC;
+
+Task3
+SELECT * FROM character WHERE level > '45' AND WHERE race = 'dwarf';
+
+Task4
+SELECT FirstName,LastName,Notes FROM Employees WHERE LastName = 'Leverling';
+SELECT * FROM Employees WHERE BirthDate < '1960-01-01';
+SELECT BirthDate FROM Employees WHERE FirstName like 'A%';
+SELECT FirstName, LastName, BirthDate FROM Employees ORDER BY BirthDate;
