@@ -38,7 +38,7 @@ test.describe("Test suite", async () => {
         await expect(companiesPage.companiesFilter.isDisplayed).resolves.toBeTruthy();
     });
 
-    test.only('Open login page from Header', async ({ page }) => {
+    test('Open login page from Header', async ({ page }) => {
         const mainPage = await PageFactory.getPage(Page.Main);
         await mainPage.navBarAccountLink.click();
 

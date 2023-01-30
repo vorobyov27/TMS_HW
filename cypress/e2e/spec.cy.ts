@@ -40,7 +40,7 @@ describe('Testing Drive2ru', () => {
     cy.url().should('contain','/signup')
   })
 
-  it.only('Open Login page.', () => {
+  it('Open Login page.', () => {
     const homePage = PageFactory.getPage(Page.Home)
     const loginPage = PageFactory.getPage(Page.Login)
     homePage.loginButton.el.click()

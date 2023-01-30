@@ -1,4 +1,5 @@
 import { ChainablePromiseElement } from 'webdriverio';
+import { logger } from '../../helpers/logger';
 
 /**
 * main page object containing all methods, selectors and functionality
@@ -23,8 +24,12 @@ export default class CommonPage {
     }
 
     public async waitAndClick (selector: string) {
+        logger.info(`wait ${selector} selector`)
         const element = await $(selector)
+        logger.info(`wait ${selector} successful`)
+        logger.info(`wait for clickable ${selector} selector`)
         await element.waitForClickable();
+        logger.info(`click ${selector} selector`)
         await element.click()
     }
 

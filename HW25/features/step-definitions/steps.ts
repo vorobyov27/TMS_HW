@@ -2,6 +2,7 @@ import { Given, When, Then } from '@wdio/cucumber-framework';
 import MainPage from '../pageObject/mainPage';
 import AfishaPage from '../pageObject/afishaPage';
 import FilmsPage from '../pageObject/filmsPage'
+import { logger } from '../../helpers/logger';
 
 const pages = {
     Main: MainPage,
@@ -25,6 +26,7 @@ Then(/^Element (\w+) appears on (\w+) page$/, async (element, page) => {
 
 Then(/^Element (\w+) is not displayed on (\w+) page$/, async (element, page) => {
     const currentPage = pages[page];
+    logger.debug(`wait for disappear ${element}`)
     currentPage.waitForDisappear(currentPage[element]);
 });
 
